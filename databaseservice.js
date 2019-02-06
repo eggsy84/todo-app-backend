@@ -27,6 +27,5 @@ function getTasks() {
 }
 
 module.exports = {
-    getDatabaseConnection, 
     getTasks
 }
