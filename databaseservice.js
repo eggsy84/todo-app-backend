@@ -26,6 +26,30 @@ function getTasks() {
     });
 }
 
+function saveTask(taskDescription) {
+    const connection = getDatabaseConnection();
+
+    return new Promise(function(resolve, reject) {
+
+        const postData  = {
+            taskDescription: taskDescription, 
+            taskCompleted: false,
+            userId: 1
+        };
+        connection.query('INSERT INTO Tasks SET ?', postData, function (error, results, fields) {
+            if (error) {
+                connection.destroy();
+                return reject(error);
+            } 
+            else {
+                connection.end();
+                return resolve(results);
+            }
+        });
+    });
+}
+
 module.exports = {
-    getTasks
+    getTasks,
+    saveTask
 }

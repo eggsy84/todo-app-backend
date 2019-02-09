@@ -1,11 +1,24 @@
 const serverless = require("serverless-http");
 const express = require("express");
 const app = express();
+app.use(express.json());
 const databaseService = require('./databaseservice');
 
 app.get("/tasks", function(request, response) {
   databaseService.getTasks().then(function(tasks){
     response.json(tasks);
+  })
+  .catch(function(error) {
+    response.status(500);
+    response.json(error);
+  });
+})
+
+app.post("/tasks", function(request, response) {
+
+  const taskDescription = request.body.taskDescription;
+  databaseService.saveTask(taskDescription).then(function(results){
+    response.json(results);
   })
   .catch(function(error) {
     response.status(500);
