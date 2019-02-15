@@ -19,8 +19,9 @@ function getTasks() {
                 return reject(error);
             } 
             else {
-                connection.end();
-                return resolve(results);
+                connection.end( function () {
+                    return resolve(results);
+                });
             }
         });
     });
@@ -42,8 +43,9 @@ function saveTask(taskDescription) {
                 return reject(error);
             } 
             else {
-                connection.end();
-                return resolve(results);
+                connection.end( function () {
+                    return resolve(results);
+                });
             }
         });
     });
