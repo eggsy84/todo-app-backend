@@ -2,6 +2,8 @@
 
 ## Pre-Requisites
 
+### Install Serverless framework
+
 This application has been created utilising the [serverless](https://serverless.com) framework.
 
 To install the framework simply run:
@@ -9,6 +11,10 @@ To install the framework simply run:
 ```
 npm install -g serverless
 ```
+
+### Configure AWS credentials
+
+TBC
 
 ## App Creation
 
