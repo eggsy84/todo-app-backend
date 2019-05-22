@@ -14,7 +14,11 @@ npm install -g serverless
 
 ### Configure AWS credentials
 
-TBC
+The next stage is to configure your AWS credentials.
+
+Following this guide to setup the right IAM credentials and then make sure serverless can use them:
+
+https://www.youtube.com/watch?v=KngM5bfpttA
 
 ## App Creation
 
